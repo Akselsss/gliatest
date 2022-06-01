@@ -8,9 +8,15 @@
     <div align="center">
       <input id="alert-button" type="button" class="button2" name="help-button2" value="Click me pls">
     </div> 
+    <div align="center">
+      <input id="3rd" type="button" class="button3" name="help-button3" value="Please work now">
+    </div> 
   </body>
   <script>
-       sm.getApi({version: 'v1'}).then(function(glia) {
+   var someButton = document.querySelector('#3rd');
+
+      someButton.addEventListener('click', function() {
+        sm.getApi({version: 'v1'}).then(function(glia) {
     var engagementRequest = glia.requestEngagement('text');
 
     engagementRequest.engagementPromise.then(function(engagement) {
@@ -23,5 +29,8 @@
       };
     });
     });
+      });
+    
+    
   </script>
 </html>
