@@ -16,6 +16,7 @@
    var someButton = document.querySelector('#3rd');
 
       someButton.addEventListener('click', function() {
+        console.log("lebo");
         sm.getApi({version: 'v1'}).then(function(glia) {
     var engagementRequest = glia.requestEngagement('text');
 
@@ -24,6 +25,7 @@
         var someButton = document.querySelector('#alert-button');
 
         someButton.addEventListener('click', function() {
+          console.log("lebo");
           engagement.recordEvent({message: 'Record visitor event'});
         });
       };
