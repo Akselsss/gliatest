@@ -9,4 +9,19 @@
       <input id="alert-button" type="button" class="button2" name="help-button2" value="Click me pls">
     </div> 
   </body>
+  <script>
+       sm.getApi({version: 'v1'}).then(function(glia) {
+    var engagementRequest = glia.requestEngagement('text');
+
+    engagementRequest.engagementPromise.then(function(engagement) {
+      var enableRecordEvent = function(engagement) {
+        var someButton = document.querySelector('#alert-button');
+
+        someButton.addEventListener('click', function() {
+          engagement.recordEvent({message: 'Record visitor event'});
+        });
+      };
+    });
+    });
+  </script>
 </html>
